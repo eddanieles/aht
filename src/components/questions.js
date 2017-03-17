@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Choices from './choices.js';
 
 class Questions extends Component {
   renderQuestions() {
@@ -8,10 +9,7 @@ class Questions extends Component {
         <li
           key={index}>
           {question.question}
-          {question.choices.map((choice, index) => {
-            //console.log(choice);
-            return <p key={index}><input type="checkbox" />{choice}</p>
-          })}
+          <Choices choices={question.choices}/>
         </li>
       );
     })
@@ -20,11 +18,11 @@ class Questions extends Component {
   render() {
     //console.log(this.props.questions);
     return (
-      <div>
+      <form>
         <ul>
         {this.renderQuestions()}
         </ul>
-      </div>
+      </form>
     )
   }
 }
