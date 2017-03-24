@@ -8,7 +8,7 @@ export default class Results extends Component {
       show: false
     }
   }
-  
+
   render() {
     console.log(this.state.show);
     const resultText = this.props.score > 0 ?
@@ -33,7 +33,7 @@ export default class Results extends Component {
             <Modal.Title id="contained-modal-title">Results</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Score: {this.props.score}
+            {/* Score: {this.props.score} */}
             <p>{resultText}</p>
             {this.props.score > 0 ? <i className="glyphicon glyphicon-thumbs-down"></i> : <i className="glyphicon glyphicon-thumbs-up"></i>}
           </Modal.Body>

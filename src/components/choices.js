@@ -13,16 +13,20 @@ class Choices extends Component {
     const choices = this.props.choices.map((choice, index) => {
       //console.log(choice);
       return (
-        <p key={index}>
-          <input type="checkbox" value={index} onChange={this.handleChange.bind(this, choice)} />
-          {choice.choice}
+        <p key={index} className="row">
+          <span className="input-group-addon">
+            <input type="checkbox" onChange={this.handleChange.bind(this, choice)} />
+            {choice.choice}
+          </span>
         </p>
       )
     });
 
     return (
-      <div>
-        {choices}
+      <div class="col-lg-6">
+        <div className="input-group">
+          {choices}
+        </div>
       </div>
     )
   }
