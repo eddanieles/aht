@@ -1,6 +1,6 @@
 export default [
   {
-    question: 'When at the gym, do you wipe down your equipment?',
+    question: 'When at the gym, do you wipe down your equipment, after use?',
     choices: [{choice: 'Yes', score: 1}, {choice: 'No', score: 0}]
   },
   {

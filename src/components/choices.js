@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { updateScore } from '../actions/index';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class Choices extends Component {
   handleChange(choice) {
     console.log(choice.score);
+    this.props.updateScore(this.props.score + choice.score)
   }
 
   render() {
@@ -24,4 +28,14 @@ class Choices extends Component {
   }
 }
 
-export default Choices;
+function mapStateToProps(state) {
+  return {
+    score: state.score
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ updateScore: updateScore }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Choices);

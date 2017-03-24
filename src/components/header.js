@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header>
+    <header className="jumbotron">
       <h1>Are You An Ass Hole?</h1>
     </header>
   )
